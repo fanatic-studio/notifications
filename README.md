@@ -1,19 +1,19 @@
 ## 安装
 
 ```shell script
-eeui plugin install eeui/notifications
+vd plugin install vd/notifications
 ```
 
 ## 卸载
 
 ```shell script
-eeui plugin uninstall eeui/notifications
+vd plugin uninstall vd/notifications
 ```
 
 ## 引用
 
 ```js
-const notifications = app.requireModule("eeui/notifications");
+const notifications = app.requireModule("vd/notifications");
 ```
 
 ## 调用方法
