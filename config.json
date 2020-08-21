@@ -1,0 +1,5 @@
+{
+	"desc": "本地通知",
+	"requireFormatName": "vdNotifications",
+	"requireName": "vd/notifications"
+}
