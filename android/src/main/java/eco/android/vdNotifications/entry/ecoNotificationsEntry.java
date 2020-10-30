@@ -1,15 +1,15 @@
-package vd.android.vdNotifications.entry;
+package eco.android.ecoNotifications.entry;
 
 import android.content.Context;
 
 import com.taobao.weex.WXSDKEngine;
 import com.taobao.weex.common.WXException;
 
-import app.vd.framework.extend.annotation.ModuleEntry;
-import vd.android.vdNotifications.module.vdNotificationsAppModule;
+import app.eco.framework.extend.annotation.ModuleEntry;
+import eco.android.ecoNotifications.module.ecoNotificationsAppModule;
 
 @ModuleEntry
-public class vdNotificationsEntry {
+public class ecoNotificationsEntry {
 
     /**
      * APP启动会运行此函数方法
@@ -19,7 +19,7 @@ public class vdNotificationsEntry {
 
         //注册weex模块
         try {
-            WXSDKEngine.registerModule("vdNotifications", vdNotificationsAppModule.class);
+            WXSDKEngine.registerModule("ecoNotifications", ecoNotificationsAppModule.class);
         } catch (WXException e) {
             e.printStackTrace();
         }

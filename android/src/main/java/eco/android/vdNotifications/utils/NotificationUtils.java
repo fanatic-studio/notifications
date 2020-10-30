@@ -1,4 +1,4 @@
-package vd.android.vdNotifications.utils;
+package eco.android.ecoNotifications.utils;
 
 
 import android.annotation.TargetApi;

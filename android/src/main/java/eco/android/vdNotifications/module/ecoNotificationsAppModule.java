@@ -1,4 +1,4 @@
-package vd.android.vdNotifications.module;
+package eco.android.ecoNotifications.module;
 
 
 import android.app.PendingIntent;
@@ -9,14 +9,14 @@ import com.taobao.weex.annotation.JSMethod;
 
 import java.util.Random;
 
-import app.vd.framework.extend.base.WXModuleBase;
-import app.vd.framework.extend.module.vdJson;
-import app.vd.framework.extend.module.vdParse;
-import vd.android.vdNotifications.R;
-import vd.android.vdNotifications.receiver.NotificationClickReceiver;
-import vd.android.vdNotifications.utils.NotificationUtils;
+import app.eco.framework.extend.base.WXModuleBase;
+import app.eco.framework.extend.module.ecoJson;
+import app.eco.framework.extend.module.ecoParse;
+import eco.android.ecoNotifications.R;
+import eco.android.ecoNotifications.receiver.NotificationClickReceiver;
+import eco.android.ecoNotifications.utils.NotificationUtils;
 
-public class vdNotificationsAppModule extends WXModuleBase {
+public class ecoNotificationsAppModule extends WXModuleBase {
 
     public static JSONObject parameter = new JSONObject();
 
@@ -29,7 +29,7 @@ public class vdNotificationsAppModule extends WXModuleBase {
             int number = random.nextInt(base.length());
             sb.append(base.charAt(number));
         }
-        return vdParse.parseInt(sb.toString());
+        return ecoParse.parseInt(sb.toString());
     }
 
     /**
@@ -46,10 +46,10 @@ public class vdNotificationsAppModule extends WXModuleBase {
         PendingIntent resultPendingIntent =PendingIntent.getBroadcast(getActivity(), randId, intent, 0);
         //发送pendingIntent
 
-        JSONObject json = vdJson.parseObject(params);
-        int notifyId = vdJson.getInt(json, "id", randId);
-        String title = vdJson.getString(json, "title");
-        String body = vdJson.getString(json, "body");
+        JSONObject json = ecoJson.parseObject(params);
+        int notifyId = ecoJson.getInt(json, "id", randId);
+        String title = ecoJson.getString(json, "title");
+        String body = ecoJson.getString(json, "body");
         parameter.put("whatId" + randId, json);
 
         NotificationUtils notificationUtils = new NotificationUtils(getContext());

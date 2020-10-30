@@ -1,21 +1,21 @@
 //
-//  vdNotificationsAppModule.m
+//  ecoNotificationsAppModule.m
 //  Pods
 //
 
-#import "vdNotificationsAppModule.h"
+#import "ecoNotificationsAppModule.h"
 #import <WeexPluginLoader/WeexPluginLoader.h>
 #import <UserNotifications/UserNotifications.h>
 
-@interface vdNotificationsAppModule ()
+@interface ecoNotificationsAppModule ()
 
 @end
 
-@implementation vdNotificationsAppModule
+@implementation ecoNotificationsAppModule
 
 @synthesize weexInstance;
 
-WX_PlUGIN_EXPORT_MODULE(vdNotifications, vdNotificationsAppModule)
+WX_PlUGIN_EXPORT_MODULE(ecoNotifications, ecoNotificationsAppModule)
 WX_EXPORT_METHOD(@selector(notify:))
 WX_EXPORT_METHOD(@selector(clearId:))
 WX_EXPORT_METHOD(@selector(clearTitle:))

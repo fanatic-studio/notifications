@@ -1,4 +1,4 @@
-package vd.android.vdNotifications.receiver;
+package eco.android.ecoNotifications.receiver;
 
 
 import android.app.Activity;
@@ -11,11 +11,11 @@ import com.alibaba.fastjson.JSONObject;
 import java.util.LinkedList;
 import java.util.NoSuchElementException;
 
-import app.vd.framework.activity.PageActivity;
-import app.vd.framework.extend.bean.PageStatus;
-import app.vd.framework.extend.module.vdJson;
-import app.vd.framework.ui.vd;
-import vd.android.vdNotifications.module.vdNotificationsAppModule;
+import app.eco.framework.activity.PageActivity;
+import app.eco.framework.extend.bean.PageStatus;
+import app.eco.framework.extend.module.ecoJson;
+import app.eco.framework.ui.eco;
+import eco.android.ecoNotifications.module.ecoNotificationsAppModule;
 
 public class NotificationClickReceiver extends BroadcastReceiver {
 
@@ -24,13 +24,13 @@ public class NotificationClickReceiver extends BroadcastReceiver {
         //todo 跳转之前要处理的逻辑
         int whatId = intent.getIntExtra("whatId", 0);
         if (whatId > 0) {
-            clickHandleMessage(vdJson.parseObject(vdNotificationsAppModule.parameter.get("whatId" + whatId)));
+            clickHandleMessage(ecoJson.parseObject(ecoNotificationsAppModule.parameter.get("whatId" + whatId)));
         }
 
         Activity mActivity = null;
         Intent newIntent;
         try {
-            LinkedList<Activity> mLinkedList = vd.getActivityList();
+            LinkedList<Activity> mLinkedList = eco.getActivityList();
             mActivity = mLinkedList.getLast();
         } catch (NoSuchElementException ignored) { }
         if (mActivity != null) {
@@ -55,7 +55,7 @@ public class NotificationClickReceiver extends BroadcastReceiver {
     }
 
     private void postMessage(Object message) {
-        LinkedList<Activity> activityList = vd.getActivityList();
+        LinkedList<Activity> activityList = eco.getActivityList();
         for (Activity mContext : activityList) {
             if (mContext instanceof PageActivity) {
                 ((PageActivity) mContext).onAppStatusListener(new PageStatus("page", "message", null, message));

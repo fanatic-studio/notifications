@@ -2,7 +2,7 @@
 const fs = require('fs');
 const path = require('path');
 
-let androidPath = path.resolve(process.cwd(), 'platforms/android/vdApp');
+let androidPath = path.resolve(process.cwd(), 'platforms/android/ecoApp');
 let gradPath = path.resolve(androidPath, 'build.gradle');
 let result = fs.readFileSync(gradPath, 'utf8');
 let values = result.split('\n');
@@ -17,7 +17,7 @@ for (let i = 0; i < values.length; i++) {
     }
 }
 
-let to = path.resolve(process.cwd(), 'plugins/vd/notifications/android/src/main/res/drawable');
+let to = path.resolve(process.cwd(), 'plugins/eco/notifications/android/src/main/res/drawable');
 _mkdirsSync(to);
 
 function _mkdirsSync(dirname)  {

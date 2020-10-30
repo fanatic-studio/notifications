@@ -1,14 +1,14 @@
 //
-//  vdNotificationsEntry.m
+//  ecoNotificationsEntry.m
 //  Pods
 //
 
-#import "vdNotificationsEntry.h"
+#import "ecoNotificationsEntry.h"
 #import "WeexInitManager.h"
-#import "vdNewPageManager.h"
+#import "ecoNewPageManager.h"
 
-WEEX_PLUGIN_INIT(vdNotificationsEntry)
-@implementation vdNotificationsEntry
+WEEX_PLUGIN_INIT(ecoNotificationsEntry)
+@implementation ecoNotificationsEntry
 
 //启动成功
 - (void) didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -55,7 +55,7 @@ WEEX_PLUGIN_INIT(vdNotificationsEntry)
         //应用处于后台时的远程推送接受
     } else {
         //应用处于后台时的本地推送接受
-        [[vdNewPageManager sharedIntstance] postMessage:@{
+        [[ecoNewPageManager sharedIntstance] postMessage:@{
             @"messageType": @"notifyClick",
             @"rawData": userInfo
         }];

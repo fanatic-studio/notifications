@@ -1,19 +1,19 @@
 ## 安装
 
 ```shell script
-vd plugin install vd/notifications
+eco plugin install https://github.com/kjeco/notifications
 ```
 
 ## 卸载
 
 ```shell script
-vd plugin uninstall vd/notifications
+eco plugin uninstall https://github.com/kjeco/notifications
 ```
 
 ## 引用
 
 ```js
-const notifications = app.requireModule("vd/notifications");
+const notifications = app.requireModule("eco/notifications");
 ```
 
 ## 调用方法
